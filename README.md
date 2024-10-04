@@ -81,8 +81,8 @@ go 1.9.X or higher is required. See [here](https://golang.org/doc/install) for i
 
 ```shell
 cat << ! >> ~/.bashrc
-> export GOPATH=\$HOME/gopath
-> export PATH=\$GOPATH:\$GOPATH/bin:\$PATH
+> export GOPATH=\$HOME/gopath/bin
+> export PATH=\$GOPATH:\$PATH
 > !
 source ~/.bashrc # To reload the settings and get the newly set ones # Or open a fresh terminal
 ```
@@ -93,7 +93,7 @@ The above setup will ensure that the drive binary after compilation can be invok
 To install from the latest source, run:
 
 ```shell
-go get -u github.com/odeke-em/drive/cmd/drive
+go install github.com/odeke-em/drive/cmd/drive@latest
 ```
 
 Otherwise:
@@ -101,13 +101,13 @@ Otherwise:
 * In order to address [issue #138](https://github.com/odeke-em/drive/issues/138), where debug information should be bundled with the binary, you'll need to run:
 
 ```shell
-go get github.com/odeke-em/drive/drive-gen && drive-gen
+go install github.com/odeke-em/drive/drive-gen@latest && drive-gen
 ```
 
 In case you need a specific binary e.g for Debian folks [issue #271](https://github.com/odeke-em/drive/issues/271) and [issue 277](https://github.com/odeke-em/drive/issues/277)
 
 ```shell
-go get -u github.com/odeke-em/drive/drive-google
+go install github.com/odeke-em/drive/drive-google@latest
 ```
 
 That should produce a binary `drive-google`
